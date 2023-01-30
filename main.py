@@ -1,7 +1,5 @@
-import re
 import requests
 import random
-import string
 
 
 def get_words():
@@ -32,7 +30,7 @@ def check_letters(placed_letters, current_guess):
 
         franken_word[franken_index] = letter_colour + letter
 
-    return new_invalid_letters, franken_word
+    return new_invalid_letters, franken_word, placed_letters
 
 
 def remove_invalid_words(word_list, invalid_letters, franken_word):
@@ -118,7 +116,7 @@ if __name__ == "__main__":
     current_guess = "salet"
     print(f"Lets try {current_guess}")
 
-    invalid_letters, franken_word = check_letters(placed_letters, current_guess)
+    invalid_letters, franken_word, placed_letters = check_letters(placed_letters, current_guess)
     word_list = remove_invalid_words(word_list, invalid_letters, franken_word)
     playing_game, num_tries, all_guesses = survey_says(franken_word, current_guess, num_tries, all_guesses, word_list)
 
@@ -136,7 +134,7 @@ if __name__ == "__main__":
             current_guess = random.choice(word_list)
             print(f"Lets try {current_guess}")
 
-        invalid_letters, franken_word = check_letters(placed_letters, current_guess)
+        invalid_letters, franken_word, placed_letters = check_letters(placed_letters, current_guess)
         word_list = remove_invalid_words(word_list, invalid_letters, franken_word)
         playing_game, num_tries, all_guesses = survey_says(franken_word, current_guess, num_tries, all_guesses, word_list)
 

@@ -22,7 +22,7 @@ def check_letters(placed_letters, current_guess):
         letter = current_guess[franken_index]
         letter_colour = letter_colours[franken_index]
 
-        if letter_colour == "g":
+        if letter_colour == "g" or letter_colour == "y":
             placed_letters += letter
 
         if letter_colour == "b" and letter not in placed_letters:

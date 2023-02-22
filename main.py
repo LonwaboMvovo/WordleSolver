@@ -16,7 +16,11 @@ def check_letters(placed_letters, current_guess):
 
     franken_word = ["", "", "", "", ""]
 
-    letter_colours = input("Colours: ").lower()
+    letter_colours = input("\nWhat is the order of colours (b - black, y - yellow, g - green): ").replace(" ", "").lower()
+
+    while any(letter not in "byg" for letter in letter_colours) or len(letter_colours) != 5:
+        print("\nInvalid input! Please input a string with 5 characters representing the colours that the given letters got, e.x. \"bbygb\"")
+        letter_colours = input("What is the order of colours (b - black, y - yellow, g - green): ").replace(" ", "").lower()
 
     for franken_index in range(5):
         letter = current_guess[franken_index]
@@ -91,7 +95,7 @@ def survey_says(franken_word, current_guess, num_tries, all_guesses, word_list):
 
     if all("g" == colour_letter[0] for colour_letter in franken_word):
         print("\n*****\nnoice\n*****\n")
-        print(f"It took {6-num_tries} guesses and there were {len(word_list)} {'words' if len(word_list) > 1 else 'word'} left to choose from:")
+        print(f"It took {6-num_tries} guesses and there {'were' if len(word_list) > 1 else 'was'} {len(word_list)} {'words' if len(word_list) > 1 else 'word'} left to choose from:")
         playing_game = False
     elif not num_tries or not len(word_list):
         print("\n*********\nnot noice\n*********\n")
@@ -111,8 +115,13 @@ if __name__ == "__main__":
     # First guess
     # A pair of MIT researchers said its the best starting word idk
     current_guess = "salet"
-    print("According to a pair of MIT researchers\"SALET\" is statistically the best word to start with")
-    print(f"So, lets try {current_guess}")
+    print("According to a pair of MIT researchers \"salet\" is statistically the best word to start with...\n")
+    print(f"So, lets try \"{current_guess}\"")
+
+    while input("Is the word valid(y/n)? ").lower() == "n":
+            word_list.remove(current_guess)
+            current_guess = random.choice(word_list)
+            print(f"\nOK then lets try {current_guess}")
 
     invalid_letters, franken_word, placed_letters = check_letters(placed_letters, current_guess)
     word_list = remove_invalid_words(word_list, invalid_letters, franken_word)
@@ -120,12 +129,12 @@ if __name__ == "__main__":
 
     # TODO to clean up this do while loop can make word_list only have "salet" at first then when num_tries is 5 can use the full word list
     while playing_game:
-        print("Unluck")
+        print("Ahh, unluck!")
 
         current_guess = random.choice(word_list)
         print(f"\nLets try {current_guess}")
 
-        while input("Is the word valid? ").lower() == "n":
+        while input("Is the word valid(y/n)? ").lower() == "n":
             word_list.remove(current_guess)
             current_guess = random.choice(word_list)
             print(f"\nOK then lets try {current_guess}")

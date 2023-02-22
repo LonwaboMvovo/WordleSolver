@@ -2,7 +2,7 @@
 
 This program is designed to solve wordle ez.
 
-Installation
+Installation:
 In order to run this program, you must have Python installed on your computer. If you do not have Python installed, you can download it from the official Python website
 at https://www.python.org/downloads/.
 
@@ -13,7 +13,7 @@ Open a command prompt or terminal and enter the following command:
 pip install requests
 ```
 
-Usage
+Usage:
 To use this program, run the "main.py" python file and follow the instructions when prompted.
 
 License:

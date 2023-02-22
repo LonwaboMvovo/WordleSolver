@@ -1,0 +1,4 @@
+__pycache__/
+.vscode/
+specs.txt
+test.py

@@ -114,7 +114,8 @@ if __name__ == "__main__":
     # First guess
     # A pair of MIT researchers said its the best starting word idk
     current_guess = "salet"
-    print(f"Lets try {current_guess}")
+    print("According to a pair of MIT researchers\"SALET\" is statistically the best word to start with")
+    print(f"So, lets try {current_guess}")
 
     invalid_letters, franken_word, placed_letters = check_letters(placed_letters, current_guess)
     word_list = remove_invalid_words(word_list, invalid_letters, franken_word)

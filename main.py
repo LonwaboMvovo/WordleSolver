@@ -3,7 +3,7 @@ import subprocess
 
 from sys import executable
 
-if __name__ != '__main__':
+if __name__ == '__main__':
     # Make sure requests installed
     required = {'requests'}
     installed = {pkg.key for pkg in pkg_resources.working_set}

@@ -104,7 +104,7 @@ def survey_says(franken_word, current_guess, num_tries, all_guesses, word_list):
     return playing_game, num_tries - 1, all_guesses
     
 
-if __name__ == "__main__":
+if __name__ != "__main__":
     word_list = get_words()
     placed_letters = ""
     invalid_letters = ""

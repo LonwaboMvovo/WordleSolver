@@ -14,7 +14,7 @@ You will also need to have the "requests" library installed. To install the libr
 Open a command prompt or terminal and enter the following command:
 
 ```
-pip install requests
+pip install -r requirements.txt
 ```
 
 ***Usage:***

@@ -1,6 +1,6 @@
 # Wordle Solver
 
-This program is designed to solve wordle ez.
+This program solves wordle EZ...sometimes
 
 <img src="https://user-images.githubusercontent.com/57689939/222192380-ca48f907-0071-4dff-8c82-d76a2920f18b.png" height="350">
 <img src="https://user-images.githubusercontent.com/57689939/222192887-e45de44d-e867-4909-b8a8-60807aadb47c.png" height="350">
